@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MMT</title>
-    <%= csrf_meta_tags %>
+    <title>Make My Trip</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Make My Trip</a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%# <%= link_to "Admin Panel", home_index_url, class: "nav-link" if admin? %> %>
+      </li>
+      <li class="nav-item">
+        <%# <%= link_to "All Meetings", root_path, class: 'nav-link' if user_signed_in?%> %>
+      </li>
+      <li class="nav-item">
+        <%# <%= link_to "All Rooms", rooms_path, class: 'nav-link' if admin? %> %>
+      </li>
+    </ul>
+    <% if user_signed_in? %>
+      <strong class='email-address'> Logged in as <%= current_user.email %></strong>
+    <%end%>
+    <ul class="navbar-nav nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% if user_signed_in? %>
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %> 
+            <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+      </div>
+  </nav>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<%# <% if admin? %>
+  <%# <p class="alert alert-success">Welcome Admin</p> %>
+<%# <% end %>
+<div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
