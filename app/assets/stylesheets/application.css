@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+ .container {
+    max-width: 1800px !important;
+}
+
+.meeting-link {
+    background-color: rgb(231, 233, 96);
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 1px auto;
+}
+.email-address {
+    color: white;
+    margin: 0 2px;
+}
+
+ .card {
+     margin: 150px auto;
+     box-shadow: 1px 2px 5px 2px rgb(131, 128, 128);
+     border-radius: 10px;
+ }
+
+ .buttons {
+     display: flex;
+     justify-content: space-between;
+ }
+
+.refact {
+    display: block;
+    margin: 100px auto;
+    box-shadow: 2px 2px 5px 1px rgb(90, 87, 87);
+    border-radius: 10px;
+}
+
+.user-card{
+    margin: 10px auto;
+    background: rgba(255, 251, 251, 0.616);
+    box-shadow: 1px 2px 6px rgb(231, 243, 216);
+}
+
+.trip-search {
+    display: flex;
+    justify-content: space-between;
+}
