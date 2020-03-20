@@ -1,0 +1,72 @@
+<%= form_with(model: aeroplane, local: true) do |form| %>
+  <% if aeroplane.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aeroplane.errors.count, "error") %> prohibited this aeroplane from being saved:</h2>
+
+      <ul>
+        <% aeroplane.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :e_fare %>
+    <%= form.text_field :e_fare %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_fare %>
+    <%= form.text_field :b_fare %>
+  </div>
+
+  <div class="field">
+    <%= form.label :f_fare %>
+    <%= form.text_field :f_fare %>
+  </div>
+
+  <div class="field">
+    <%= form.label :e_row %>
+    <%= form.number_field :e_row %>
+  </div>
+
+  <div class="field">
+    <%= form.label :e_col %>
+    <%= form.number_field :e_col %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_row %>
+    <%= form.number_field :b_row %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_col %>
+    <%= form.number_field :b_col %>
+  </div>
+
+  <div class="field">
+    <%= form.label :f_row %>
+    <%= form.number_field :f_row %>
+  </div>
+
+  <div class="field">
+    <%= form.label :f_col %>
+    <%= form.number_field :f_col %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

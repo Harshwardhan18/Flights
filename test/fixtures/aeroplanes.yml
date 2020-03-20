@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  model: MyString
+  e_fare: 9.99
+  b_fare: 9.99
+  f_fare: 9.99
+  e_row: 1
+  e_col: 1
+  b_row: 1
+  b_col: 1
+  f_row: 1
+  f_col: 1
+
+two:
+  name: MyString
+  model: MyString
+  e_fare: 9.99
+  b_fare: 9.99
+  f_fare: 9.99
+  e_row: 1
+  e_col: 1
+  b_row: 1
+  b_col: 1
+  f_row: 1
+  f_col: 1
