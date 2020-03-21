@@ -1,0 +1,65 @@
+<% plane = Trip.find(params[:trip_id]).aeroplane %>
+<% erow = plane.e_row %>
+<% ecol = plane.e_col %>
+<% brow = plane.b_row %>
+<% bcol = plane.b_col %>
+<% frow = plane.f_row %>
+<% fcol = plane.f_col %>
+<div class="plane">
+  <div class="cockpit">
+    <h1>Please select a seat</h1>
+  </div>
+  <div class="exit exit--front fuselage"></div>
+  <ol class="cabin fuselage">
+  <div class='text-center'><strong>Economy Class</strong></div>
+  <% (1..erow).each_with_index do |i| %>
+  <% alpha = '@' %>
+    <li class="row row--1">
+      <ol class="seats" type="Economy">
+      <% (1..ecol).each do %>
+      
+      <% alpha = alpha.next %>
+        <li class="seat">
+        <%= f.radio_button(:seat_number, "Economy."+"#{alpha}"+"#{i}") %>
+          <!--<input type="radio" id="<%= i %><%= alpha %>" /> -->
+          <%= f.label(:seat_number, "#{alpha}"+"#{i}",:value => "Economy."+"#{alpha}"+"#{i}") %>
+        </li>
+        <% end %>
+      </ol>
+    </li>
+    <% end %>
+    <div class='text-center'><strong>Premium Economy Class</strong></div>
+      <% (1..frow).each_with_index do |j| %>
+      <% alpha = '@' %>
+    <li class="row row--1">
+      <ol class="seats" type="Premium Economy">
+      <% (1..fcol).each do %>
+     
+      <% alpha = alpha.next %>
+        <li class="seat">
+          <%= f.radio_button(:seat_number, "Premium Economy."+"#{alpha}"+"#{j}") %>
+          <%= f.label(:seat_number, "#{alpha}"+"#{j}",:value => "Premium Economy."+"#{alpha}"+"#{j}") %>
+        </li>
+        <% end %>
+      </ol>
+    </li>
+    <% end %>
+    <div class='text-center'><strong>Business Class</strong></div>
+      <% (1..brow).each_with_index do |k| %>
+      <% alpha = '@' %>
+    <li class="row row--1">
+      <ol class="seats" type="Business">
+      <% (1..bcol).each do %>
+      <% alpha = alpha.next %>
+        <li class="seat">
+          <%= f.radio_button(:seat_number, "Business."+"#{alpha}"+"#{k}") %>
+          <%= f.label(:seat_number, "#{alpha}"+"#{k}",:value => "Business."+"#{alpha}"+"#{k}") %>
+        </li>
+        <% end %>
+      </ol>
+    </li>
+    <% end %>
+  </ol>
+  <%= f.radio_button(:seat_number, '123') %>
+  <div class="exit exit--back fuselage"></div>
+</div>

@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+<%= render 'seat_config', :f => f %>
 <%= f.fields_for :passenger, Passenger.new do |form| %>
   <div class="field">
     <%= form.label :name %>
