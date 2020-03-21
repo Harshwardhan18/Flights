@@ -25,7 +25,6 @@ class PassengersController < ApplicationController
   # POST /passengers.json
   def create
     @passenger = Passenger.new(passenger_params)
-
     respond_to do |format|
       if @passenger.save
         format.html { redirect_to @passenger, notice: 'Passenger was successfully created.' }
