@@ -162,11 +162,11 @@
   }
   .seat input[type=radio]:disabled + label {
     background: #dddddd;
-    text-indent: -9999px;
+    /* text-indent: -9999px; */
     overflow: hidden;
   }
   .seat input[type=radio]:disabled + label:after {
-    content: "X";
+    content: "";
     text-indent: 0;
     position: absolute;
     top: 4px;

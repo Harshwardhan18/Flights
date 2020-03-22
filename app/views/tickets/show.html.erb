@@ -20,5 +20,6 @@
   <%= @ticket.seat_class %>
 </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%# <%= link_to 'Edit', edit_ticket_path(@ticket), :trip_id => trip.id %> <br> 
+<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-primary' %>
 <%= link_to 'Back', tickets_path %>

@@ -15,8 +15,6 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
-    @ticket.build_passenger
-    @aeroplanes=Aeroplane.all
   end
 
   # GET /tickets/1/edit
@@ -45,6 +43,7 @@ class TicketsController < ApplicationController
   def update
     respond_to do |format|
       if @ticket.update(ticket_params)
+        @ticket.trip_id = params[:trip_id]
         format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
         format.json { render :show, status: :ok, location: @ticket }
       else
