@@ -5,15 +5,15 @@
 <% bcol = plane.b_col %>
 <% frow = plane.f_row %>
 <% fcol = plane.f_col %>
+<div class="text-center"><strong><%= plane.name %></strong></div>
 <div class="plane">
   <div class="cockpit">
     <h1>Please select a seat</h1>
   </div>
   <div class="exit exit--front fuselage"></div>
   <ol class="cabin fuselage">
-
   <!-- Economy Class Configuration -->
-  <div class='text-center'><strong>Economy Class</strong></div>
+  <div class='text-center seat-class'><strong>Economy Class</strong></div>
   <% (1..erow).each_with_index do |i| %>
   <% alpha = '@' %>
     <li class="row">
@@ -21,12 +21,12 @@
       <% (1..ecol).each do %>
       <% alpha = alpha.next %>
       <% if Trip.find(params[:trip_id]).tickets.where("seat_class LIKE ? AND seat_number LIKE ?", "Economy","#{alpha}"+"#{i}").count==1 %>
-        <li class="seat">
+        <li class="seat eco">
         <%= f.radio_button(:seat_number, "Economy."+"#{alpha}"+"#{i}", disabled: true) %>
           <%= f.label(:seat_number, "#{alpha}"+"#{i}",:value => "Economy."+"#{alpha}"+"#{i}") %>
         </li>
         <% else %>
-        <li class="seat">
+        <li class="seat eco">
         <%= f.radio_button(:seat_number, "Economy."+"#{alpha}"+"#{i}") %>
           <%= f.label(:seat_number, "#{alpha}"+"#{i}",:value => "Economy."+"#{alpha}"+"#{i}") %>
         </li>
@@ -37,7 +37,7 @@
     <% end %>
 
     <!-- First Class Configuration -->
-    <div class='text-center'><strong>Premium Economy Class</strong></div>
+    <div class='text-center seat-class'><strong>Premium Economy Class</strong></div>
       <% (1..frow).each_with_index do |j| %>
       <% alpha = '@' %>
     <li class="row">
@@ -46,12 +46,12 @@
      
       <% alpha = alpha.next %>
       <% if Trip.find(params[:trip_id]).tickets.where("seat_class LIKE ? AND seat_number LIKE ?", "Premium Economy","#{alpha}"+"#{j}").count==1 %>
-        <li class="seat">
+        <li class="seat pre">
           <%= f.radio_button(:seat_number, "Premium Economy."+"#{alpha}"+"#{j}", disabled: true) %>
           <%= f.label(:seat_number, "#{alpha}"+"#{j}",:value => "Premium Economy."+"#{alpha}"+"#{j}") %>
         </li>
         <% else %>
-        <li class="seat">
+        <li class="seat pre">
           <%= f.radio_button(:seat_number, "Premium Economy."+"#{alpha}"+"#{j}") %>
           <%= f.label(:seat_number, "#{alpha}"+"#{j}",:value => "Premium Economy."+"#{alpha}"+"#{j}") %>
         </li>
@@ -62,7 +62,7 @@
     <% end %>
 
     <!-- Business Class Configuration -->
-    <div class='text-center'><strong>Business Class</strong></div>
+    <div class='text-center seat-class'><strong>Business Class</strong></div>
       <% (1..brow).each_with_index do |k| %>
       <% alpha = '@' %>
     <li class="row">
@@ -70,14 +70,14 @@
       <% (1..bcol).each do %>
       <% alpha = alpha.next %>
         <% if Trip.find(params[:trip_id]).tickets.where("seat_class LIKE ? AND seat_number LIKE ?", "Business","#{alpha}"+"#{k}").count==1 %>
-        <li class="seat">
+        <li class="seat bus">
           <%= f.radio_button(:seat_number, "Business."+"#{alpha}"+"#{k}", disabled: true) %>
           <%= f.label(:seat_number, "#{alpha}"+"#{k}",:value => "Business."+"#{alpha}"+"#{k}") %>
         </li>
         <% else %>
-        <li class="seat">
+        <li class="seat bus">
           <%= f.radio_button(:seat_number, "Business."+"#{alpha}"+"#{k}") %>
-          <%= f.label(:seat_number, "#{alpha}"+"#{k}",:value => "Business."+"#{alpha}"+"#{k}") %>
+          <%= f.label(:seat_number, "#{alpha}"+"#{k}", :value => "Business."+"#{alpha}"+"#{k}") %>
         </li>
         <% end  %>
         <% end %>

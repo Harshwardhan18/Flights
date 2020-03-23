@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'trips#search'
   get '/trips/search' => 'trips#search', as: 'search'
   post '/trips/search' => 'trips#search'
   resources :tickets

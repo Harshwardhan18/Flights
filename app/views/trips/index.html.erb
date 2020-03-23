@@ -2,13 +2,17 @@
 
 <h1>Trips</h1>
 
-<table>
+<table class="table table-dark table-hover">
   <thead>
     <tr>
       <th>Source</th>
       <th>Destination</th>
       <th>Date of dep</th>
-      <th>Date of arr</th>
+      <th>Time of arr</th>
+      <th>Time of departure</th>
+      <th>Business Class fare</th>
+      <th>Economy class fare</th>
+      <th>First class fare</th>
       <th>Aeroplane</th>
       <th colspan="3"></th>
     </tr>
@@ -20,8 +24,12 @@
         <td><%= trip.source %></td>
         <td><%= trip.destination %></td>
         <td><%= trip.date_of_dep %></td>
-        <td><%= trip.date_of_arr %></td>
-        <td><%= trip.aeroplane_id %></td>
+        <td><%= trip.time_of_arr%></td>
+        <td><%= trip.time_of_dep%></td>
+        <td><%= trip.b_fare %></td>
+        <td><%= trip.e_fare %></td>
+        <td><%= trip.f_fare %></td>
+        <td><%= trip.aeroplane.name %></td>
         <td><%= link_to 'Show', trip %></td>
         <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
         <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>

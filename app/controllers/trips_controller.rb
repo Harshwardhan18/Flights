@@ -41,7 +41,7 @@ class TripsController < ApplicationController
     @source = params[:source]
     @destination= params[:destination]
     @date_of_journey = params[:date_of_journey]
-    @list_trips = Trip.all.where("source LIKE ? AND destination LIKE ?", @source, @destination)
+    @list_trips = Trip.all.where("source LIKE ? AND destination LIKE ? AND date_of_dep LIKE ?", @source, @destination, @date_of_journey)
   end
 
   # PATCH/PUT /trips/1
@@ -76,6 +76,6 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.require(:trip).permit(:source, :destination, :date_of_dep, :date_of_arr, :aeroplane_id)
+      params.require(:trip).permit(:source, :destination, :date_of_dep, :time_of_arr,:time_of_dep,:e_fare,:f_fare,:b_fare, :aeroplane_id)
     end
 end

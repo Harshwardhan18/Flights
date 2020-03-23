@@ -13,31 +13,62 @@
  *= require_tree .
  *= require_self
  */
-.container {
-    max-width: 1800px !important;
-}
 
-.meeting-link {
+
+/* .meeting-link {
     background-color: rgb(231, 233, 96);
     border-radius: 5px;
     padding: 0 5px;
     margin: 1px auto;
-}
+} */
 .email-address {
     color: white;
     margin: 0 2px;
 }
-
+.fs {
+  color: #2474ca;
+  
+}
+.search-header{
+  margin: 0px auto !important;
+  max-height: 270px;
+}
+.background-search{
+  background-image: linear-gradient(to bottom,#051322,#15457c);
+  height: 500px;
+  padding: 100px 0;
+  
+}
+hr {
+  margin: 5px auto;
+}
+.btn-custom{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 45px;
+  background-image: linear-gradient(to bottom,#1a36538c,#15457c);
+  border-radius: 25px;
+  border: none;
+  position: absolute;
+  top: 250px;
+  left: 420px;
+}
  .card {
      margin: 150px auto;
      box-shadow: 1px 2px 5px 2px rgb(131, 128, 128);
      border-radius: 10px;
  }
+.search-trips {
+  display: flex;
+  justify-content: center;
+  
+}
 
- .buttons {
-     display: flex;
-     justify-content: space-between;
- }
+.search-fields {
+  padding: 25px;
+}
+
 
 .refact {
     display: block;
@@ -67,7 +98,7 @@
   
   .plane {
     margin: 20px auto;
-    max-width: 300px;
+    max-width: 350px;
     /* padding: 0 10px !important; */
   }
   
@@ -130,7 +161,7 @@
     margin: 0;
   }
   .row {
-      margin: 0 15px !important;
+      margin: 0 45px !important;
   }
   
   .seats {
@@ -154,7 +185,7 @@
     opacity: 0;
   }
   .seat input[type='radio']:checked + label {
-    background: #0ce21d;
+    
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
     animation-duration: 300ms;
@@ -182,14 +213,41 @@
     position: relative;
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     line-height: 1.5rem;
-    padding: 4px 0;
-    background: rgba(18, 232, 247, 0.692);
+    padding: 4px 2px;
+    
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
+  }
+  .eco label{
+    background: rgba(120, 231, 194, 0.74);
+  }
+  .eco label:hover{
+    box-shadow: 0 0 0px 2px rgba(120, 231, 194, 0.356);
+  }
+  .eco input[type='radio']:checked + label{
+    background: rgb(0, 255, 170);;
+  }
+  .pre label{
+    background: rgba(134, 233, 240, 0.692);
+  }
+  .pre label:hover{
+    box-shadow: 0 0 0px 2px rgba(18, 232, 247, 0.589);
+  }
+  .pre input[type='radio']:checked + label{
+    background: rgb(0, 238, 255);
+  }
+  .bus label{
+    background: rgba(240, 144, 144, 0.692);
+  }
+  .bus label:hover{
+    box-shadow: 0 0 0px 2px rgba(240, 144, 144, 0.274);
+  }
+  .bus input[type='radio']:checked + label{
+    background: rgb(240, 76, 76);
   }
   .seat label:before {
     content: "";
@@ -204,7 +262,6 @@
   }
   .seat label:hover {
     cursor: pointer;
-    box-shadow: 0 0 0px 2px rgb(13, 204, 179);
   }
   
   @-webkit-keyframes rubberBand {
@@ -270,5 +327,29 @@
   .rubberBand {
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
+  }
+  .seat-config {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 50px;
+  }
+  .seat-map {
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px 6px #888888;
+  }
+  .seat-details{
+    margin-top: 250px;
+    max-height: 300px;
+    position: sticky;
+    top: 10px;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0px 4px 12px 6px #888888;
+    padding: 20px;
+  }
+  .seat-class {
+    margin: 2px auto;
+    background: rgba(163, 211, 32, 0.74);
   }
   
