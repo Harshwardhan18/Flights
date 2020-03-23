@@ -16,7 +16,7 @@
       <th>B col</th>
       <th>F row</th>
       <th>F col</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -36,7 +36,7 @@
         <td><%= aeroplane.f_col %></td>
         <td><%= link_to 'Associated Trips', aeroplane, class: 'btn btn-light' %></td>
         <td><%= link_to 'Edit', edit_aeroplane_path(aeroplane), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', aeroplane, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <%# <td><%= link_to 'Destroy', aeroplane, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </tr>
     <% end %>
   </tbody>

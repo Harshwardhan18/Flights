@@ -51,7 +51,7 @@
       <td><%= trip.source %></td>
       <td><%= trip.destination %></td>
       <td><%= trip.date_of_dep %></td>
-      <td><%= link_to 'Book Now', {:controller => "tickets", :action => "new", :trip_id => trip.id }, class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Book Now', {:controller => "tickets", :action => "new", :trip_id => trip.id }, class: 'btn btn-primary' unless admin? %></td>
     </tr>
     <% end %>
   </tbody>

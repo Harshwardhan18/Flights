@@ -1,33 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1>Tickets</h1>
+<div class="row">
+  <% @passengers.each do |passenger| %>
+      <% passenger.tickets.each do |ticket| %>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= ticket.pnr %></strong></h5>
+        <p class="card-text text-center">Happy Journey From: <strong><%= ticket.source %></strong> To: <strong><%= ticket.destination %></strong></p>
+        <%= link_to 'Update Ticket', edit_ticket_path(ticket, :trip_id => ticket.trip_id), class: 'btn btn-primary' %>
+        <%= link_to 'Show', ticket %>
+        <%= link_to 'Cancel Booking', ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
 
-<h1>Passengers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @passengers.each do |passenger| %>
-      <tr>
-        <td><%= passenger.name %></td>
-        <td><%= passenger.age %></td>
-        <td><%= passenger.gender %></td>
-        <td><%= passenger.user_id %></td>
-        <td><%= link_to 'Show', passenger %></td>
-        <td><%= link_to 'Edit', edit_passenger_path(passenger) %></td>
-        <td><%= link_to 'Destroy', passenger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Passenger', new_passenger_path %>

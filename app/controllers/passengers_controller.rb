@@ -4,7 +4,7 @@ class PassengersController < ApplicationController
   # GET /passengers
   # GET /passengers.json
   def index
-    @passengers = Passenger.all
+    @passengers = current_user.passengers
   end
 
   # GET /passengers/1
@@ -27,6 +27,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.new(passenger_params)
     respond_to do |format|
       if @passenger.save
+        @passenger.user << current_user
         format.html { redirect_to @passenger, notice: 'Passenger was successfully created.' }
         format.json { render :show, status: :created, location: @passenger }
       else

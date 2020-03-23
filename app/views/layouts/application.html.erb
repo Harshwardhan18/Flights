@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Make My Trip</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
@@ -19,13 +19,14 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%# <%= link_to "Admin Panel", home_index_url, class: "nav-link" if admin? %>
+        <%= link_to "Aeroplanes", aeroplanes_url, class: "nav-link" if admin?%>
       </li>
       <li class="nav-item">
-        <%# <%= link_to "All Meetings", root_path, class: 'nav-link' if user_signed_in?%>
+        <%= link_to "Trips", trips_url, class: "nav-link" if admin?%>
       </li>
       <li class="nav-item">
         <%# <%= link_to "All Rooms", rooms_path, class: 'nav-link' if admin? %>
+        <%= link_to "Your Bookings", passengers_path, class: 'nav-link' if user_signed_in? unless admin? %>
       </li>
     </ul>
     <% if user_signed_in? %>

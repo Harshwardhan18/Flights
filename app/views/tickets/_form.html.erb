@@ -8,7 +8,7 @@
     </div>
   <% end %>
 <div class = "container">
-<%= form_for @ticket, local: true do |f| %> 
+<%= form_for @ticket, :html => {id:'tickets'}, local: true do |f| %> 
 <div class = "seat-map">
 <%= render 'seat_config', :f => f %>
 </div> 

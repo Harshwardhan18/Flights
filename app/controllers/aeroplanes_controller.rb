@@ -1,5 +1,6 @@
 class AeroplanesController < ApplicationController
   before_action :set_aeroplane, only: [:show, :edit, :update, :destroy]
+  before_action :must_be_admin
 
   # GET /aeroplanes
   # GET /aeroplanes.json
@@ -67,8 +68,14 @@ class AeroplanesController < ApplicationController
       @aeroplane = Aeroplane.find(params[:id])
     end
 
+    def must_be_admin
+      unless current_user.admin?
+        redirect_to root_path, alert: 'You do not have access'  
+      end
+    end
     # Only allow a list of trusted parameters through.
     def aeroplane_params
       params.require(:aeroplane).permit(:name, :model, :e_fare, :b_fare, :f_fare, :e_row, :e_col, :b_row, :b_col, :f_row, :f_col)
     end
+    
 end

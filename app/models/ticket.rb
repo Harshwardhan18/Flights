@@ -3,13 +3,15 @@ class Ticket < ApplicationRecord
     belongs_to :passenger, dependent: :destroy
     belongs_to :trip
     accepts_nested_attributes_for :passenger, allow_destroy: true
-
+ 
     def generate_ticket
         split_seat = seat_number.split('.')
         self.seat_class = split_seat[0]
         self.seat_number = split_seat[1]
         self.pnr = "S"+"#{seat_number}" + "#{seat_class[0..1].upcase}" + "T" + "#{trip_id}" + "P"
-
+        self.date_of_journey = Trip.find_by(id: "#{trip_id}").date_of_dep
+        self.source = Trip.find_by(id: "#{trip_id}").source
+        self.destination = Trip.find_by(id: "#{trip_id}").destination
         if self.seat_class == 'Business'
             self.total_cost = trip.aeroplane.b_fare + trip.b_fare
         elsif self.seat_class == 'Premium Economy'

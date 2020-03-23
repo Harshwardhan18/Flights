@@ -15,3 +15,20 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// require('jquery')
+// $(document).on('turbolinks:load', function(){
+//     $('#tickets').submit(function(e) {
+//         e.preventDefault()  
+//         var valuesToSubmit = $(this).serialize();
+//         $.ajax({
+//             type: "POST",
+//             url: '/tickets', //sumbits it to the given url of the form
+//             data: valuesToSubmit,
+//             dataType: "HTML" // you want a difference between normal and ajax-calls, and json is standard
+//         }).done(function(data){
+//             console.log("success", data);
+//             // $('#player-data').append(`<ul><li>${json.id}</li><li>${json.name}</li><li>${json.goal}</li></ul`);
+//         });
+//         return false; // prevents normal behaviour
+//     }); 
+// });
