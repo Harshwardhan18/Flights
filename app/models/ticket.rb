@@ -8,6 +8,7 @@ class Ticket < ApplicationRecord
         split_seat = seat_number.split('.')
         self.seat_class = split_seat[0]
         self.seat_number = split_seat[1]
+        self.pnr = "S"+"#{seat_number}" + "#{seat_class[0..1].upcase}" + "T" + "#{trip_id}" + "P"
 
         if self.seat_class == 'Business'
             self.total_cost = trip.aeroplane.b_fare + trip.b_fare

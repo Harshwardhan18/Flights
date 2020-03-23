@@ -1,59 +1,28 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Source</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Date</th>
+      <th colspan=3></th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <% @aeroplane.trips.each_with_index do |trip, i| %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td><%= trip.source %></td>
+      <td><%= trip.destination %></td>
+      <td><%= trip.date_of_dep %></td>
+      <td><%= link_to 'All Passengers', trip, class: 'btn btn-light' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @aeroplane.name %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @aeroplane.model %>
-</p>
-
-<p>
-  <strong>E fare:</strong>
-  <%= @aeroplane.e_fare %>
-</p>
-
-<p>
-  <strong>B fare:</strong>
-  <%= @aeroplane.b_fare %>
-</p>
-
-<p>
-  <strong>F fare:</strong>
-  <%= @aeroplane.f_fare %>
-</p>
-
-<p>
-  <strong>E row:</strong>
-  <%= @aeroplane.e_row %>
-</p>
-
-<p>
-  <strong>E col:</strong>
-  <%= @aeroplane.e_col %>
-</p>
-
-<p>
-  <strong>B row:</strong>
-  <%= @aeroplane.b_row %>
-</p>
-
-<p>
-  <strong>B col:</strong>
-  <%= @aeroplane.b_col %>
-</p>
-
-<p>
-  <strong>F row:</strong>
-  <%= @aeroplane.f_row %>
-</p>
-
-<p>
-  <strong>F col:</strong>
-  <%= @aeroplane.f_col %>
-</p>
 
 <%= link_to 'Edit', edit_aeroplane_path(@aeroplane) %> |
 <%= link_to 'Back', aeroplanes_path %>

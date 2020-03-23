@@ -1,8 +1,5 @@
-<%= form_for @ticket, local: true do |f| %> 
   <% if ticket.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
-
       <ul>
         <% ticket.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,26 +7,34 @@
       </ul>
     </div>
   <% end %>
+<div class = "container">
+<%= form_for @ticket, local: true do |f| %> 
+<div class = "seat-map">
 <%= render 'seat_config', :f => f %>
+</div> 
+<div class = "passenger-info">
+<h3>Add Passenger</h3>
 <%= f.fields_for :passenger, Passenger.new do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field(:name, class: 'form-control', placeholder: 'Type your Name here') %>
   </div>
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
+  <div class="form-group">
+    <%= form.number_field(:age, class: 'form-control', placeholder: 'Type your Age here') %>
   </div>
   <%= form.hidden_field(:_destroy, value: 1) %>
   <%= form.hidden_field(:user_id, :value => current_user.id) %>
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
+  <div class="form-group">
+    <%= form.text_field(:gender, class: 'form-control', placeholder: 'Male or Female') %>
   </div>
  <% end %> 
- 
 <%= hidden_field_tag(:trip_id, params[:trip_id]) %>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit(class: 'btn btn-block btn-primary') %>
   </div>
 <% end %>
+</div>
+</div>
+
+
+
+

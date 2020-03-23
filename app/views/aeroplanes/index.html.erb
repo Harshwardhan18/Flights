@@ -2,7 +2,7 @@
 
 <h1>Aeroplanes</h1>
 
-<table>
+<table class="table table-dark table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -34,9 +34,9 @@
         <td><%= aeroplane.b_col %></td>
         <td><%= aeroplane.f_row %></td>
         <td><%= aeroplane.f_col %></td>
-        <td><%= link_to 'Show', aeroplane %></td>
-        <td><%= link_to 'Edit', edit_aeroplane_path(aeroplane) %></td>
-        <td><%= link_to 'Destroy', aeroplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Associated Trips', aeroplane, class: 'btn btn-light' %></td>
+        <td><%= link_to 'Edit', edit_aeroplane_path(aeroplane), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', aeroplane, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

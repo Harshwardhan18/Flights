@@ -21,6 +21,12 @@
     padding: 0 5px;
     margin: 1px auto;
 } */
+.container {
+  max-width: 1800px !important;
+}
+.template-seat{
+  display: grid;
+}
 .email-address {
     color: white;
     margin: 0 2px;
@@ -328,28 +334,33 @@ hr {
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
   }
-  .seat-config {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 50px;
-  }
-  .seat-map {
-    z-index: 10;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px 6px #888888;
-  }
-  .seat-details{
-    margin-top: 250px;
-    max-height: 300px;
-    position: sticky;
-    top: 10px;
-    border-radius: 10px;
-    z-index: 10;
-    box-shadow: 0px 4px 12px 6px #888888;
-    padding: 20px;
-  }
-  .seat-class {
-    margin: 2px auto;
-    background: rgba(163, 211, 32, 0.74);
-  }
-  
+.ticket-detail {
+  z-index: 10;
+  box-shadow: 1px 1px 1px rgb(131, 128, 128);
+  padding: 10px;
+  /* display: inline-block; */
+}
+.seat-map {
+  display: inline-block;
+  margin: 10px 200px;
+  z-index: 2;
+  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  border-radius: 10px;
+  min-width: 700px;
+}
+.passenger-info {
+  position: fixed;
+  top: 400px;
+  right: 450px;
+  min-width: 400px;
+  min-height: 300px;
+  padding: 10px 50px;
+  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  border-radius: 10px;
+}
+.aero-detail {
+  max-width: 500px !important;
+  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  padding: 15px;
+  border-radius: 10px;
+}

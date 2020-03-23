@@ -1,4 +1,3 @@
-<%= form_with(model: aeroplane, local: true) do |form| %>
   <% if aeroplane.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(aeroplane.errors.count, "error") %> prohibited this aeroplane from being saved:</h2>
@@ -10,63 +9,66 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<div class = "container aero-detail">
+<%= form_with(model: aeroplane, local: true) do |form| %>
+<h3 class = "text-center">Fill in Plane details</h3>
+  <div class="form-group">
+    <strong><%= form.label :name %></strong>
+    <%= form.text_field(:name, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
+  <div class="form-group">
+    <strong><%= form.label :model %></strong>
+    <%= form.text_field(:model,class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :e_fare %>
-    <%= form.number_field :e_fare %>
+  <div class="form-group">
+    <strong><%= form.label :e_fare %></strong>
+    <%= form.number_field(:e_fare, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :b_fare %>
-    <%= form.number_field :b_fare %>
+  <div class="form-group">
+    <strong><%= form.label :b_fare %></strong>
+    <%= form.number_field(:b_fare, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :f_fare %>
-    <%= form.number_field :f_fare %>
+  <div class="form-group">
+    <strong><%= form.label :f_fare %></strong>
+    <%= form.number_field(:f_fare, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :e_row %>
-    <%= form.number_field :e_row %>
+  <div class="form-group">
+    <strong><%= form.label :e_row %></strong>
+    <%= form.number_field(:e_row, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :e_col %>
-    <%= form.number_field :e_col %>
+  <div class="form-group">
+    <strong><%= form.label :e_col %></strong>
+    <%= form.number_field(:e_col, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :b_row %>
-    <%= form.number_field :b_row %>
+  <div class="form-group">
+    <strong><%= form.label :b_row %></strong>
+    <%= form.number_field(:b_row, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :b_col %>
-    <%= form.number_field :b_col %>
+  <div class="form-group">
+    <strong><%= form.label :b_col %></strong>
+    <%= form.number_field(:b_col, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :f_row %>
-    <%= form.number_field :f_row %>
+  <div class="form-group">
+    <strong><%= form.label :f_row %></strong>
+    <%= form.number_field(:f_row, class: 'form-control') %>
   </div>
 
-  <div class="field">
-    <%= form.label :f_col %>
-    <%= form.number_field :f_col %>
+  <div class="form-group">
+    <strong><%= form.label :f_col %></strong>
+    <%= form.number_field(:f_col, class: 'form-control') %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit(class: 'btn btn-success btn-block') %>
   </div>
 <% end %>
+</div>
