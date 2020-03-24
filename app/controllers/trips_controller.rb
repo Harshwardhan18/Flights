@@ -41,7 +41,7 @@ class TripsController < ApplicationController
     @source = params[:source]
     @destination= params[:destination]
     @date_of_journey = params[:date_of_journey]
-    @list_trips = Trip.all.where("source LIKE ? AND destination LIKE ? AND date_of_dep LIKE ?", @source, @destination, @date_of_journey)
+    @list_trips = Trip.where("source LIKE ? AND destination LIKE ? AND date_of_dep LIKE ?", @source, @destination, @date_of_journey)
   end
 
   # PATCH/PUT /trips/1
