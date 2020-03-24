@@ -58,7 +58,11 @@ class TicketsController < ApplicationController
   def destroy
     @ticket.destroy
     respond_to do |format|
+      unless current_user.admin?
       format.html { redirect_to passengers_url, notice: 'Ticket was successfully destroyed.' }
+      else
+        format.html { redirect_to aeroplanes_url, notice: 'Ticket was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

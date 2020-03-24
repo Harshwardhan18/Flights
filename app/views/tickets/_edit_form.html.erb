@@ -2,7 +2,7 @@
     <div id="error_explanation">
       <ul>
         <% ticket.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <div class = "alert alert-warning"><%= message %></div>
         <% end %>
       </ul>
     </div>
@@ -29,7 +29,7 @@
  <% end %> 
 <%= hidden_field_tag(:trip_id, params[:trip_id]) %>
   <div class="form-group">
-    <%= f.submit(class: 'btn btn-block btn-primary') %>
+    <%= f.submit(class: 'btn btn-block btn-success') %>
   </div>
 <% end %>
 </div>

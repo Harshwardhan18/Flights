@@ -24,6 +24,9 @@
 .container {
   max-width: 1800px !important;
 }
+.backgrounds {
+  background-image: linear-gradient(to bottom,#292828,#fffffe);
+}
 .template-seat{
   display: grid;
 }
@@ -176,10 +179,13 @@ hr {
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
+  .row:nth-child(10) {
+    margin: 0 auto;
+  }
   
   .seat {
     display: flex;
-    flex: 0 0 14.28571428571429%;
+    flex: 0 0 10.28571428571429%;
     padding: 5px;
     position: relative;
   }
@@ -363,4 +369,21 @@ hr {
   box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
   padding: 15px;
   border-radius: 10px;
+  margin-top: 10px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.card-ticket {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  padding: 20px;
+  background-image: linear-gradient(to bottom,#eee8e8,#4b4848);
+
+}
+.ticket {
+  display: flex;
+  justify-content: space-between;
 }

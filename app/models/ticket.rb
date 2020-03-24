@@ -3,6 +3,7 @@ class Ticket < ApplicationRecord
     belongs_to :passenger, dependent: :destroy
     belongs_to :trip
     accepts_nested_attributes_for :passenger, allow_destroy: true
+    validates :seat_number,presence: true
  
     def generate_ticket
         split_seat = seat_number.split('.')

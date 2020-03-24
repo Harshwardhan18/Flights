@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @ticket.source %>
-</p>
-
-<p>
-  <strong>Destination:</strong>
-  <%= @ticket.destination %>
-</p>
-
-<p>
-  <strong>Date of journey:</strong>
-  <%= @ticket.date_of_journey %>
-</p>
-
-<p>
-  <strong>Seat class:</strong>
-  <%= @ticket.seat_class %>
-</p>
-
-<p>
-  <strong>Total Cost:</strong>
-  <%= @ticket.total_cost %>
-</p>
-
-<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-primary' %>
-
+<div class = "card w-50 card-ticket">
+<div class = "card-body ticket">
+    <div class="card-header">
+      <h4><strong><%= @ticket.pnr %></strong></h4>
+      <h5><strong><%= @ticket.source %></strong></h5>
+      <h5><strong><%= @ticket.destination %></strong></h5>
+      <h6><strong><%= @ticket.date_of_journey %></strong></h6>
+    </div>
+    <div class="card-header">
+      <h4><strong>SEAT: <%= @ticket.seat_class %>
+      <%= @ticket.seat_number %></strong></h4>
+      <hr>
+      <h4><strong>PASSENGER: <%= @ticket.passenger.name %> |
+      <%= @ticket.passenger.gender %></strong></h4>
+    </div>
+<div class="card-header">
+ <strong>Fare:</strong>
+<%= @ticket.total_cost %>
+</div>
+</div>
+<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-dark' %>
+</div>

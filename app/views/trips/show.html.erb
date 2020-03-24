@@ -19,7 +19,7 @@
       <th>Passenger Name</th>
       <th>Passenger Age</th>
       <th>Passenger Gender</th>
-      <th colspan = 3>Passenger Seat Details</th>
+      <th >Passenger Seat Details</th>
 
     </tr>
   </thead>
@@ -33,7 +33,9 @@
         <% passenger.tickets.each do |p|%>
          <td><%= p.seat_number %> <%= p.seat_class %></td>
          <td><%= p.pnr %></td>
+         <td><%= link_to 'Delete Passenger', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
         <% end %>
+        
       </tr>
     <% end %>
   </tbody>

@@ -1,19 +1,22 @@
-<h1>Tickets</h1>
+<div class = "backgrounds">
 <div class="row">
   <% @passengers.each do |passenger| %>
       <% passenger.tickets.each do |ticket| %>
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card m-2">
       <div class="card-body">
         <h5 class="card-title"><strong><%= ticket.pnr %></strong></h5>
         <p class="card-text text-center">Happy Journey From: <strong><%= ticket.source %></strong> To: <strong><%= ticket.destination %></strong></p>
-        <%= link_to 'Update Ticket', edit_ticket_path(ticket, :trip_id => ticket.trip_id), class: 'btn btn-primary' %>
-        <%= link_to 'Show', ticket %>
-        <%= link_to 'Cancel Booking', ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class = "buttons">
+        <%= link_to 'Update Ticket', edit_ticket_path(ticket, :trip_id => ticket.trip_id), class: 'btn btn-dark' %>
+        <%= link_to 'Show', ticket, class: 'btn btn-info' %>
+        <%= link_to 'Cancel Booking', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+        </div>
       </div>
     </div>
   </div>
   <% end %>
   <% end %>
+</div>
 </div>
 
