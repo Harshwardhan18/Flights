@@ -9,7 +9,7 @@
   <% end %>
   <div class = "container aero-detail">
 <%= form_with(model: trip, local: true) do |form| %>
-<h3 class = "text-center">Fill in Plane details</h3>
+<h3 class = "text-center">Fill in Trip details</h3>
   <div class="form-group">
     <strong><%= form.label :source %></strong>
     <%= form.text_field(:source, class: 'form-control') %>
@@ -26,15 +26,14 @@
   </div>
 
   <div class="form-group">
-    <strong><%= form.label :arrival_time %></strong>
-    <%= form.time_select(:time_of_arr, {:minute_step => 15, :ampm => true}, class: 'form-control') %>
-  </div>
-  <div class="form-group">
     <strong><%= form.label :departure_time %></strong>
     <%= form.time_select(:time_of_dep, {:minute_step => 15, :ampm => true}, class: 'form-control') %>
   </div>
 
-
+  <div class="form-group">
+    <strong><%= form.label :arrival_time %></strong>
+    <%= form.time_select(:time_of_arr, {:minute_step => 15, :ampm => true}, class: 'form-control') %>
+  </div>
   <div class="form-group">
       <strong><%= form.label :aeroplane_id %></strong>
         <select name="trip[aeroplane_id]" class ='form-control'>

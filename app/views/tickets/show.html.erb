@@ -1,22 +1,43 @@
-<div class = "card w-50 card-ticket">
-<div class = "card-body ticket">
-    <div class="card-header">
-      <h4><strong><%= @ticket.pnr %></strong></h4>
-      <h5><strong><%= @ticket.source %></strong></h5>
-      <h5><strong><%= @ticket.destination %></strong></h5>
-      <h6><strong><%= @ticket.date_of_journey %></strong></h6>
-    </div>
-    <div class="card-header">
-      <h4><strong>SEAT: <%= @ticket.seat_class %>
-      <%= @ticket.seat_number %></strong></h4>
-      <hr>
-      <h4><strong>PASSENGER: <%= @ticket.passenger.name %> |
-      <%= @ticket.passenger.gender %></strong></h4>
-    </div>
-<div class="card-header">
- <strong>Fare:</strong>
-<%= @ticket.total_cost %>
-</div>
-</div>
-<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-dark' %>
+	<div class="map">
+  <%= image_tag("map4.jpg", :alt => "boom") %>
+		<div class="background">
+      <h4 class = "text-center" style = "color:white;"><strong><%= @ticket.trip.aeroplane.name %></strong></h4>
+			<div class="ticket-sheet">
+				<div class="ticket-row">
+					<div class ="opp">From</div>
+					<div class ="ag">To</div>
+				</div>
+				<div class="ticket-row">
+					<div><h3><strong><%= @ticket.source.upcase %></h3></strong></div>
+					<div><%= image_tag("flight.png", :alt => "boom") %></div>
+					<div><h3><strong><%= @ticket.destination.upcase %></h3></strong></div>
+				</div>
+				<div class="ticket-row">
+					<div class ="opp"><%= readable_date(@ticket.date_of_journey) %> <br> <%= readable_time(@ticket.trip.time_of_dep) %></div>
+					<div class ="ag"><%= readable_date(@ticket.date_of_journey) %><br> <%= readable_time(@ticket.trip.time_of_arr) %></div>
+				</div>
+				<div class="ticket-table-row">
+					<table class="table">
+						<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Flight</th>
+							<th scope="col">Seat</th>
+							<th scope="col">Class</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td scope="row"><%= @ticket.passenger.name %></td>
+							<td><%= @ticket.trip.aeroplane.model %></td>
+							<td><%= @ticket.seat_number %></td>
+							<td><%= @ticket.seat_class %></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+        	<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-update' %>
+			</div>
+		</div>
+    
 </div>

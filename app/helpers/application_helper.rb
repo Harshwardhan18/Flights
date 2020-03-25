@@ -1,6 +1,9 @@
 module ApplicationHelper
+    def readable_date(date)
+        date.strftime("%d, %^b %C")
+    end
     def readable_time(time)
-        time.strftime("%b %d, %I:%M%P")
+        time.strftime("%l:%M %p")
     end
 
     def author_of(record)

@@ -387,3 +387,70 @@ hr {
   display: flex;
   justify-content: space-between;
 }
+.map {
+	margin: 58px auto;	
+	height: 800px;
+  width: 1000px;
+  background-color: #eee8e8;	
+}
+.map img {
+	height: 800px;
+	width: 1000px;
+	opacity: 0.4;
+	position: relative;
+}
+.background {
+	margin: 10px auto;
+	width: 500px;
+	height: 500px;
+	background-image: linear-gradient(to bottom,#c56d6d,#15457c);	
+	position: absolute;
+	top: 258px;
+	left: 720px;
+}
+.ticket-sheet{
+	margin-top: 72px;
+	margin-left: -50px;
+	position: relative;
+	width: 600px;
+  background: white;
+  color: #555657;
+  padding: 10px;
+  border: none;
+  box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+}
+.ticket-row{
+	display: flex;
+	justify-content: space-around;
+  margin: 10px 0;
+  align-items: center;
+}
+.ticket-row img{
+	height: 50px;
+	width: 50px;
+}
+.opp {
+  width: 120px;
+  margin-left: -62px;
+}
+.ag{
+  width: 120px;
+  margin-right: -71px;
+}
+.ticket-table-row{
+  padding: 0 40px;
+  color: grey !important;
+}
+.btn-update {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 35px;
+  background-image: linear-gradient(to bottom,#15457c,#c56d6d94);
+  border-radius: 25px;
+  border: none;
+  position: absolute;
+  left: 450px;
+  bottom: -20px;
+  
+}
