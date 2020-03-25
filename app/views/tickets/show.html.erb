@@ -36,6 +36,7 @@
 						</tbody>
 					</table>
 				</div>
+				<div class = "pnr"><h3><strong><%= @ticket.pnr %></strong></h3></div>
         	<%= link_to 'Update', {:controller => "tickets", :action => "edit", :trip_id => @ticket.trip_id }, class: 'btn btn-update' %>
 			</div>
 		</div>

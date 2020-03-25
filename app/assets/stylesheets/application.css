@@ -454,3 +454,10 @@ hr {
   bottom: -20px;
   
 }
+.pnr {
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -38px;
+  bottom: 130px;
+  color: #351818;
+}
