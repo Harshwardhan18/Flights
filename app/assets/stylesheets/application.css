@@ -14,25 +14,15 @@
  *= require_self
  */
 
-
-/* .meeting-link {
-    background-color: rgb(231, 233, 96);
-    border-radius: 5px;
-    padding: 0 5px;
-    margin: 1px auto;
-} */
 .container {
   max-width: 1800px !important;
 }
 .backgrounds {
   background-image: linear-gradient(to bottom,#292828,#fffffe);
 }
-.template-seat{
-  display: grid;
-}
 .email-address {
-    color: white;
-    margin: 0 2px;
+  color: white;
+  margin: 0 2px;
 }
 .fs {
   color: #2474ca;
@@ -170,7 +160,7 @@ hr {
     margin: 0;
   }
   .row {
-      margin: 0 45px !important;
+      margin: 0 12px !important;
   }
   
   .seats {
@@ -188,6 +178,8 @@ hr {
     flex: 0 0 10.28571428571429%;
     padding: 5px;
     position: relative;
+    height: 50px;
+    width: 70px;
   }
   .seat:nth-child(3) {
     margin-right: 14.28571428571429%;
@@ -460,4 +452,11 @@ hr {
   left: -38px;
   bottom: 130px;
   color: #351818;
+}
+.page-not-found {
+  margin: 200px auto;
+  width: 700px;
+  height: 500px;  
+  background-image: linear-gradient(to bottom,#15457c,#c56d6d94);
+  box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
 }

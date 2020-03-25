@@ -31,6 +31,7 @@
 <%= hidden_field_tag(:trip_id, params[:trip_id]) %>
   <div class="form-group">
     <%= f.submit(class: 'btn btn-block btn-dark') %>
+    <%= link_to "Checkout", passengers_path, class: 'btn btn-success btn-block' %>
   </div>
 <% end %>
 </div>
