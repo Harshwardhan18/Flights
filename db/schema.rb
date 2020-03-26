@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_142023) do
     t.string "source"
     t.string "destination"
     t.date "date_of_dep"
-    t.date "time_of_arr"
+    t.datetime "time_of_arr"
     t.integer "aeroplane_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
