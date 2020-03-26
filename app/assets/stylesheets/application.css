@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,10 +16,12 @@
  *= require_self
  */
 
-.container {
+ .container {
   max-width: 1800px !important;
 }
 .backgrounds {
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#292828),to(#fffffe));
+  background-image: -o-linear-gradient(top,#292828,#fffffe);
   background-image: linear-gradient(to bottom,#292828,#fffffe);
 }
 .email-address {
@@ -33,6 +37,8 @@
   max-height: 270px;
 }
 .background-search{
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#051322),to(#15457c));
+  background-image: -o-linear-gradient(top,#051322,#15457c);
   background-image: linear-gradient(to bottom,#051322,#15457c);
   height: 500px;
   padding: 100px 0;
@@ -46,6 +52,8 @@ hr {
   font-weight: bold;
   font-size: 18px;
   padding: 10px 45px;
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#1a36538c),to(#15457c));
+  background-image: -o-linear-gradient(top,#1a36538c,#15457c);
   background-image: linear-gradient(to bottom,#1a36538c,#15457c);
   border-radius: 25px;
   border: none;
@@ -55,12 +63,17 @@ hr {
 }
  .card {
      margin: 150px auto;
-     box-shadow: 1px 2px 5px 2px rgb(131, 128, 128);
+     -webkit-box-shadow: 1px 2px 5px 2px rgb(131, 128, 128);
+             box-shadow: 1px 2px 5px 2px rgb(131, 128, 128);
      border-radius: 10px;
  }
 .search-trips {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   
 }
 
@@ -72,23 +85,30 @@ hr {
 .refact {
     display: block;
     margin: 100px auto;
-    box-shadow: 2px 2px 5px 1px rgb(90, 87, 87);
+    -webkit-box-shadow: 2px 2px 5px 1px rgb(90, 87, 87);
+            box-shadow: 2px 2px 5px 1px rgb(90, 87, 87);
     border-radius: 10px;
 }
 
 .user-card{
     margin: 10px auto;
     background: rgba(255, 251, 251, 0.616);
-    box-shadow: 1px 2px 6px rgb(231, 243, 216);
+    -webkit-box-shadow: 1px 2px 6px rgb(231, 243, 216);
+            box-shadow: 1px 2px 6px rgb(231, 243, 216);
 }
 
 .trip-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 *, *:before, *:after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   
   /* html {
@@ -140,7 +160,9 @@ hr {
     background: green;
     color: white;
     top: 50%;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   .exit:before {
     left: 0;
@@ -159,22 +181,31 @@ hr {
     padding: 0;
     margin: 0;
   }
-  .row {
-      /* margin: 0 12px !important; */
-  }
   
   .seats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 371px;
   }
 
   
   .seat {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex: 0 0 10.28571428571429%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 10.28571428571429%;
+            flex: 0 0 10.28571428571429%;
     padding: 5px;
     position: relative;
     height: 50px;
@@ -191,8 +222,10 @@ hr {
     
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
-    animation-duration: 300ms;
-    animation-fill-mode: both;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
   }
   .seat input[type=radio]:disabled + label {
     background: #dddddd;
@@ -205,10 +238,13 @@ hr {
     position: absolute;
     top: 4px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
   }
   .seat input[type=radio]:disabled + label:hover {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     cursor: not-allowed;
   }
   .seat label {
@@ -222,14 +258,17 @@ hr {
     padding: 4px 2px;
     
     border-radius: 5px;
-    animation-duration: 300ms;
-    animation-fill-mode: both;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
   }
   .eco label{
     background: rgba(120, 231, 194, 0.74);
   }
   .eco label:hover{
-    box-shadow: 0 0 0px 2px rgba(120, 231, 194, 0.356);
+    -webkit-box-shadow: 0 0 0px 2px rgba(120, 231, 194, 0.356);
+            box-shadow: 0 0 0px 2px rgba(120, 231, 194, 0.356);
   }
   .eco input[type='radio']:checked + label{
     background: rgb(0, 255, 170);;
@@ -238,7 +277,8 @@ hr {
     background: rgba(134, 233, 240, 0.692);
   }
   .pre label:hover{
-    box-shadow: 0 0 0px 2px rgba(18, 232, 247, 0.589);
+    -webkit-box-shadow: 0 0 0px 2px rgba(18, 232, 247, 0.589);
+            box-shadow: 0 0 0px 2px rgba(18, 232, 247, 0.589);
   }
   .pre input[type='radio']:checked + label{
     background: rgb(0, 238, 255);
@@ -247,7 +287,8 @@ hr {
     background: rgba(240, 144, 144, 0.692);
   }
   .bus label:hover{
-    box-shadow: 0 0 0px 2px rgba(240, 144, 144, 0.274);
+    -webkit-box-shadow: 0 0 0px 2px rgba(240, 144, 144, 0.274);
+            box-shadow: 0 0 0px 2px rgba(240, 144, 144, 0.274);
   }
   .bus input[type='radio']:checked + label{
     background: rgb(240, 76, 76);
@@ -259,7 +300,9 @@ hr {
     height: 75%;
     top: 1px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
     background: rgba(255, 255, 255, 0.4);
     border-radius: 3px;
   }
@@ -333,7 +376,8 @@ hr {
   }
 .ticket-detail {
   z-index: 10;
-  box-shadow: 1px 1px 1px rgb(131, 128, 128);
+  -webkit-box-shadow: 1px 1px 1px rgb(131, 128, 128);
+          box-shadow: 1px 1px 1px rgb(131, 128, 128);
   padding: 10px;
   /* display: inline-block; */
 }
@@ -341,7 +385,8 @@ hr {
   display: inline-block;
   margin: 10px 200px;
   z-index: 2;
-  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  -webkit-box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+          box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
   border-radius: 10px;
   min-width: 700px;
 }
@@ -352,31 +397,43 @@ hr {
   min-width: 400px;
   min-height: 300px;
   padding: 10px 50px;
-  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  -webkit-box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+          box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
   border-radius: 10px;
 }
 .aero-detail {
   max-width: 500px !important;
-  box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+  -webkit-box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
+          box-shadow: 0px 2px 4px 2px rgb(90, 87, 87);
   padding: 15px;
   border-radius: 10px;
   margin-top: 10px;
 }
 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .card-ticket {
   position: absolute;
   top: 100px;
   left: 500px;
   padding: 20px;
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#eee8e8),to(#4b4848));
+  background-image: -o-linear-gradient(top,#eee8e8,#4b4848);
   background-image: linear-gradient(to bottom,#eee8e8,#4b4848);
 
 }
 .ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .map {
 	margin: 58px auto;	
@@ -394,6 +451,8 @@ hr {
 	margin: 10px auto;
 	width: 500px;
 	height: 500px;
+	background-image: -webkit-gradient(linear,left top, left bottom,from(#c56d6d),to(#15457c));
+	background-image: -o-linear-gradient(top,#c56d6d,#15457c);
 	background-image: linear-gradient(to bottom,#c56d6d,#15457c);	
 	position: absolute;
 	top: 258px;
@@ -408,13 +467,19 @@ hr {
   color: #555657;
   padding: 10px;
   border: none;
-  box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+  -webkit-box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+          box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
 }
 .ticket-row{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
   margin: 10px 0;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .ticket-row img{
 	height: 50px;
@@ -437,6 +502,8 @@ hr {
   font-weight: bold;
   font-size: 18px;
   padding: 8px 35px;
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#15457c),to(#c56d6d94));
+  background-image: -o-linear-gradient(top,#15457c,#c56d6d94);
   background-image: linear-gradient(to bottom,#15457c,#c56d6d94);
   border-radius: 25px;
   border: none;
@@ -447,7 +514,9 @@ hr {
 }
 .pnr {
   position: absolute;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   left: -38px;
   bottom: 130px;
   color: #351818;
@@ -456,6 +525,9 @@ hr {
   margin: 200px auto;
   width: 700px;
   height: 500px;  
+  background-image: -webkit-gradient(linear,left top, left bottom,from(#15457c),to(#c56d6d94));  
+  background-image: -o-linear-gradient(top,#15457c,#c56d6d94);  
   background-image: linear-gradient(to bottom,#15457c,#c56d6d94);
-  box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+  -webkit-box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+          box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
 }
