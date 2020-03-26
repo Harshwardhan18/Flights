@@ -4,9 +4,9 @@
     <tr>
       <th>Source</th>
       <th>Destination</th>
-      <th>Date of dep</th>
-      <th>Time of arr</th>
-      <th>Time of departure</th>
+      <th>Date of Departure</th>
+      <th>Time of Departure</th>
+      <th>Time of Arrival</th>
       <th>Business Class fare</th>
       <th>Economy class fare</th>
       <th>First class fare</th>
@@ -20,9 +20,9 @@
       <tr>
         <td><%= trip.source %></td>
         <td><%= trip.destination %></td>
-        <td><%= trip.date_of_dep %></td>
-        <td><%= trip.time_of_arr%></td>
-        <td><%= trip.time_of_dep%></td>
+        <td><%= readable_date(trip.date_of_dep) %></td>
+        <td><%= readable_time(trip.time_of_dep)%></td>
+        <td><%= readable_time(trip.time_of_arr)%></td>
         <td><%= trip.b_fare %></td>
         <td><%= trip.e_fare %></td>
         <td><%= trip.f_fare %></td>

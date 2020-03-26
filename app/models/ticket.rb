@@ -16,12 +16,24 @@ class Ticket < ApplicationRecord
         self.destination = current_trip.destination
         current_plane = current_trip.aeroplane
         total_seats = (current_plane.b_row*current_plane.b_col) + (current_plane.f_row*current_plane.f_col) + (current_plane.e_row*current_plane.e_col)
-        if self.seat_class == 'Business'
-            self.total_cost = trip.aeroplane.b_fare + trip.b_fare
-        elsif self.seat_class == 'Premium Economy'
-            self.total_cost = trip.aeroplane.f_fare + trip.f_fare
+        seats_booked = Ticket.all.where('trip_id = ?', trip_id).count
+
+        if seats_booked > total_seats/2
+            if self.seat_class == 'Business'
+                self.total_cost = trip.aeroplane.b_fare + trip.b_fare + trip.b_fare*0.1
+            elsif self.seat_class == 'Premium Economy'
+                self.total_cost = trip.aeroplane.f_fare + trip.f_fare + trip.f_fare*0.1
+            else
+                self.total_cost = trip.aeroplane.e_fare + trip.e_fare  + trip.e_fare*0.1  
+            end
         else
-            self.total_cost = trip.aeroplane.e_fare + trip.e_fare    
+            if self.seat_class == 'Business'
+                self.total_cost = trip.aeroplane.b_fare + trip.b_fare
+            elsif self.seat_class == 'Premium Economy'
+                self.total_cost = trip.aeroplane.f_fare + trip.f_fare
+            else
+                self.total_cost = trip.aeroplane.e_fare + trip.e_fare    
+            end 
         end
     end
 end

@@ -160,18 +160,17 @@ hr {
     margin: 0;
   }
   .row {
-      margin: 0 12px !important;
+      /* margin: 0 12px !important; */
   }
   
   .seats {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
+    max-width: 371px;
   }
-  .row:nth-child(10) {
-    margin: 0 auto;
-  }
+
   
   .seat {
     display: flex;

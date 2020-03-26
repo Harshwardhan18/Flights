@@ -8,6 +8,7 @@
       <div class="card-body">
         <h5 class="card-title"><strong><%= ticket.pnr %></strong></h5>
         <p class="card-text text-center">Happy Journey From: <strong><%= ticket.source %></strong> To: <strong><%= ticket.destination %></strong></p>
+        <p class="card-text text-center">Fare : <%= ticket.total_cost %></strong></p>
         <div class = "buttons">
         <%= link_to 'Update Ticket', edit_ticket_path(ticket, :trip_id => ticket.trip_id), class: 'btn btn-dark' %>
         <%= link_to 'Show', ticket, class: 'btn btn-info' %>
