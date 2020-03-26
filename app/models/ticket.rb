@@ -9,10 +9,13 @@ class Ticket < ApplicationRecord
         split_seat = seat_number.split('.')
         self.seat_class = split_seat[0]
         self.seat_number = split_seat[1]
+        current_trip = Trip.find_by(id: "#{trip_id}")
         self.pnr = "S"+"#{seat_number}" + "#{seat_class[0..1].upcase}" + "T" + "#{trip_id}" + "P"
-        self.date_of_journey = Trip.find_by(id: "#{trip_id}").date_of_dep
-        self.source = Trip.find_by(id: "#{trip_id}").source
-        self.destination = Trip.find_by(id: "#{trip_id}").destination
+        self.date_of_journey = current_trip.date_of_dep
+        self.source = current_trip.source
+        self.destination = current_trip.destination
+        current_plane = current_trip.aeroplane
+        total_seats = (current_plane.b_row*current_plane.b_col) + (current_plane.f_row*current_plane.f_col) + (current_plane.e_row*current_plane.e_col)
         if self.seat_class == 'Business'
             self.total_cost = trip.aeroplane.b_fare + trip.b_fare
         elsif self.seat_class == 'Premium Economy'

@@ -5,6 +5,9 @@ class PassengersController < ApplicationController
   # GET /passengers.json
   def index
     @passengers = current_user.passengers
+    # @trips_today = current_user.meetings.where("DATE(start_time) = ?", Date.today)
+    # @upcoming_trips = current_user.meetings.where("DATE(start_time) > ?", Date.today)
+    # @previous_trips = current_user.meetings.where("DATE(start_time) < ?", Date.today)
   end
 
   # GET /passengers/1
