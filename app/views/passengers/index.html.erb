@@ -11,7 +11,7 @@
         <p class="card-text text-center">Fare : <%= ticket.total_cost %></strong></p>
         <div class = "buttons">
         <%= link_to 'Update Ticket', edit_ticket_path(ticket, :trip_id => ticket.trip_id), class: 'btn btn-dark' %>
-        <%= link_to 'Show', ticket, class: 'btn btn-info' %>
+        <%= link_to 'Ticket Detail', ticket, class: 'btn btn-info' %>
         <%= link_to 'Cancel Booking', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
         </div>
       </div>

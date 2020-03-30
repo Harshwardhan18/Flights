@@ -3,15 +3,16 @@
     <tr>
       <th>Name</th>
       <th>Model</th>
-      <th>E fare</th>
-      <th>B fare</th>
-      <th>F fare</th>
-      <th>E row</th>
+      <th>Economy Fare</th>
+      <th>Business fare</th>
+      <th>Premium fare</th>
+      <th>Economy row</th>
       <th>E col</th>
       <th>B row</th>
       <th>B col</th>
       <th>F row</th>
       <th>F col</th>
+      <th>Total Seats</th>
       <th colspan="2"><%= link_to ' + ', new_aeroplane_path, class: 'btn btn-light' %></th>
     </tr>
   </thead>
@@ -30,6 +31,7 @@
         <td><%= aeroplane.b_col %></td>
         <td><%= aeroplane.f_row %></td>
         <td><%= aeroplane.f_col %></td>
+        <td><%= aeroplane.total_seats %></td>
         <td><%= link_to 'Associated Trips', aeroplane, class: 'btn btn-light' %></td>
         <td><%= link_to 'Edit', edit_aeroplane_path(aeroplane), class: 'btn btn-warning' %></td>
         <%# <td><%= link_to 'Destroy', aeroplane, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>

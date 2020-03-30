@@ -78,7 +78,8 @@ hr {
 }
 
 .search-fields {
-  padding: 25px;
+  padding: 18px 25px;
+  min-width: 250px;
 }
 
 
@@ -197,8 +198,7 @@ hr {
             justify-content: center;
     max-width: 371px;
   }
-
-  
+    
   .seat {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -530,4 +530,10 @@ hr {
   background-image: linear-gradient(to bottom,#15457c,#c56d6d94);
   -webkit-box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
           box-shadow: 0px 2px 4px 2px rgb(245, 201, 201);
+}
+.seat_warning{
+  color: yellow;
+}
+.hurry {
+  color: red;
 }

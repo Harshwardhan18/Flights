@@ -7,19 +7,29 @@
   <div class="card-body search-trips">
     <div class = "search-fields">
         <div class="form-group">
-          <%= form.label :From %>
-          <%= form.text_field(:source, {:class => 'form-control'}) %>
+          <h5 class = "text-left"><strong><%= form.label :From %></strong></h5>
+          <select name="source" class ='form-control'>
+            <option value="<%= @source %>" selected hidden><%= @source %></option>
+            <% Trip.all.each do |trip| %>
+              <option value="<%= trip.source %>"><%= trip.source %></option>
+            <% end %>
+          </select>
         </div>
     </div>
     <div class = "search-fields">
           <div class="form-group">
-            <%= form.label :To %>
-            <%= form.text_field(:destination, {:class => 'form-control'}) %>
+            <h5 class = "text-left"><strong><%= form.label :To %></strong></h5>
+            <select name="destination" class ='form-control'>
+            <option value="<%= @destination %>" selected hidden><%= @destination %></option>
+            <% Trip.all.each do |trip| %>
+              <option value="<%= trip.destination %>"><%= trip.destination %></option>
+            <% end %>
+          </select>
           </div>
     </div>
     <div class = "search-fields">
           <div class="form-group">
-            <%= form.label :date_of_journey %>
+            <h5 class = "text-left"><strong><%= form.label :date %></strong></h5>
             <%= form.date_field(:date_of_journey, {:class => 'form-control'}) %>
           </div>
     </div>
@@ -32,6 +42,7 @@
 <% end %>
 </div>
 
+<% if @list_trips.exists? %>
 <table class="table table-dark table-hover">
   <thead>
     <tr>
@@ -40,20 +51,31 @@
       <th scope="col">Source</th>
       <th scope="col">Destination</th>
       <th scope="col">Date</th>
+      <th scope="col">Seats Left</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
   <% @list_trips.each do |trip| %>
+  <% @seats_left = (trip.aeroplane.total_seats - Ticket.all.where('trip_id = ?', trip.id).count) %>
     <tr>
       <th scope="row">1</th>
       <td><%= trip.aeroplane.name %></td>
       <td><%= trip.source %></td>
       <td><%= trip.destination %></td>
-      <td><%= trip.date_of_dep %></td>
+      <td><%= readable_date(trip.date_of_dep) %></td>
+      <% if @seats_left <= trip.aeroplane.total_seats/2 %>
+      <td class = "seat_warning"><%= @seats_left %></td>
+      <% elsif @seats_left <= trip.aeroplane.total_seats/3  %>
+      <td class = "hurry"><%= @seats_left %></td>
+      <% else %>
+      <td><%= @seats_left %></td>
+      <% end %>
       <td><%= link_to 'Book Now', {:controller => "tickets", :action => "new", :trip_id => trip.id }, class: 'btn btn-danger' unless admin? %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<% end %>
 
